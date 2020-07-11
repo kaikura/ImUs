@@ -38,9 +38,10 @@ people_counter.py computes the area of the figure individuated by people IDs. Ar
 
 # Environmental Sound Modulation
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. The sound is generated and processed by MaxMSP.
+
 ![](resources/max_pat.jpg)
 
-At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages by the area between people.
+At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages by the area between people. 
 
 ![](resources/hybrid.png)
 ![](resources/diva.jpg)
@@ -54,5 +55,8 @@ The video is saved as themorph.avi in the selected directory.
 What the user will see is that their physical presence have an effect on the visualization.
 videoOSC.pde reads the video and decompose it in cells resembling single pixels. 
 Those cells are exploded by the code in the 3 dimensions. 
+
+![](resources/visualization.png)
+
 The z coordinate is controlled via OSC messages by the area of the figure individuated by the IDs of people_counter.py. The bigger it is (the bigger the distance between people is), the bigger z will be. In this way, as the closeness between people increases the planar visualization increases, and so the clearness of the video visualization.
 The video is put in loop and then played at random points every 22 frames for aestetics purpouses.
