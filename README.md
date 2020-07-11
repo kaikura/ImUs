@@ -23,6 +23,7 @@ See it here: (for presentation purpouses the visualization is on a computer scre
 # Scripts
 comandantecheguevara.py links
 
+
 # Step by Step
 
 # Face Capture 
