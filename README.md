@@ -35,6 +35,9 @@ As people enter in the *exploration space* they are tracked by the camera. They 
 Area indivi are sent via OSC messages through a LAN working on a hotspot or any other router. The python works as a server for MaxMSP sound processing and for Processing video processing.
 
 # Environmental Sound Modulation
+
+![](ImUs/resources/MAx_pat.png)
+
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. 
 The sound is generated and processed by MaxMSP. At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled by th
 
