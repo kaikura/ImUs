@@ -45,7 +45,11 @@ What the user will hear is that their physical presence have an effect on the so
 
 ![](resources/max_pat.jpg)
 
-At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages by the area between people. 
+At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. 
+The sound is generated and processed by MaxMSP. At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages. The OSC value is sent to Max from a python program that take care of detecting the events on the playground. 
+A second sample, produced with Diva u-he, is also controlled in the patch. This time is fade-controlled in order to complete the chord, in poliphony with the first sample.
+Of couse, it is possible to upload whatever sample that are gonna be modulated in the same way.
+
 
 ![](resources/hybrid.png)
 ![](resources/diva.jpg)
