@@ -37,11 +37,10 @@ The istallation is meant to be experienced by three people, but with appropriate
 people_counter.py computes the area of the figure individuated by people IDs. Are values are sent via OSC messages through a LAN working on a hotspot or any other router. The python file works as a server for MaxMSP sound processing and for Processing video processing.
 
 # Environmental Sound Modulation
-
+What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. The sound is generated and processed by MaxMSP.
 ![](resources/max_pat.jpg)
 
-What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. 
-The sound is generated and processed by MaxMSP. At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages by the area between people.
+At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages by the area between people.
 
 ![](resources/hybrid.png)
 ![](resources/diva.jpg)
