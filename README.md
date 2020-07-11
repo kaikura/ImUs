@@ -1,5 +1,5 @@
 # ImUs
-*ImUs* is an application that develops through the interaction with others. It investigates the sense of collectivity that technology can enhance and evolve. We believe collectivity to be something more than the sum of individuals.
+*ImUs* is an application that develops through the interaction between users, enabling collaboration between them to produce a unique artistic piece. It is meant to be an interactive installation, and belongs to the broad subset of experience creation interactive art. The installation investigates the sense of collectivity that technology can enhance and evolve. We believe collectivity to be something more than the sum of individuals.
 *ImUs* is rooted in the key ideas of New Media Art:
 
 - **Materiality:** the audience is engaged through the physical world
