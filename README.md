@@ -43,6 +43,7 @@ people_counter.py computes the area of the figure individuated by people IDs. Ar
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. 
 The sound is generated and processed by MaxMSP. At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages by the area between people.
 
+![](resources/hybrid.png)
 ![](resources/diva.jpg)
 
 # Face Merging
