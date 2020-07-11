@@ -6,7 +6,7 @@
 - **Embodiment:** mind and body have the same weight, they're not treated separately
 - **The Cyborg:** the application have a certain degree of autonomy
 - **Hybridity:** hybridity of disciplines involved is self evident; real world and virtual world merge through sound modulation and through visualization
-- **Narrative:** the experience have starting point and a climax that can be reached by the audience
+- **Narrative:** the experience have a starting point and a climax that can be reached by the audience
 - **Interactivity:** the piece works through people
 
 We developed the experience being inspired by those concepts, trying to convey our message.
