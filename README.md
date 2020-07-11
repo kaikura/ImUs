@@ -28,6 +28,7 @@ comandantecheguevara.py links
 # Face Capture 
 The users take pictures of their faces. The visualized ellipse defines the correct position and centering. 
 
+![](resources/facecapture.jpg)
 
 The user can take a picture of himself when satisfied. Automatically, after the photo is acquired by webcam-capture-v1.01.py and stored in the selcted directory the code is ready for the next person. Once the photos have been taken the *exploration space* is ready to be used.
 
