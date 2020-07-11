@@ -43,6 +43,8 @@ people_counter.py computes the area of the figure individuated by people IDs. Ar
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. 
 The sound is generated and processed by MaxMSP. At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages by the area between people.
 
+![](resources/diva.jpg)
+
 # Face Merging
 The faces obtained initially are merged by face_morpher, in particular by morpher.py via Delaunay triangulation. The method allows to compute an average for each possible couple of faces and a global average of all faces. The python code collects the images from the output directory of webcam-capture-v1.01.py.
 videoer.py returns an .avi file with the transactions between the averages. 
