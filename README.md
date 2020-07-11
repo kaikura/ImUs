@@ -38,7 +38,7 @@ The *second camera* films over the *exploration space*. people_counter.py utiliz
 The istallation is meant to be experienced by three people, but with appropriate customization this number can be changed.
 
 # The Network
-people_counter.py computes the area of the figure individuated by people IDs. Are values are sent via OSC messages through a LAN working on a hotspot or any other router. The python file works as a server for MaxMSP sound processing and for Processing video processing.
+people_counter.py computes the area of the figure individuated by people IDs. Area values are sent via OSC messages through a LAN working on a hotspot or any other router. The python file works as a server for MaxMSP sound processing and for Processing video processing clients.
 
 # Environmental Sound Modulation
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. The sound is generated and processed by MaxMSP.
