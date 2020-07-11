@@ -30,7 +30,7 @@ The users take pictures of their faces. The visualized ellipse defines the corre
 
 ![](resources/facecapture.jpg)
 
-The user can take a picture of himself when satisfied. Automatically, after the photo is acquired by webcam-capture-v1.01.py and stored in the selcted directory the code is ready for the next person. Once the photos have been taken the *exploration space* is ready to be used.
+The user can take a picture of himself when satisfied. Automatically, after the photo is acquired by webcam-capture-v1.01.py and stored in the selected directory the code is ready for the next person. Once the photos have been taken the *exploration space* is ready to be used.
 
 # People Tracking
 As the audence enters the *exploration space* they are tracked by the camera. They are free to move and interact with others. They'll find themself immersed in a soundscape. 
