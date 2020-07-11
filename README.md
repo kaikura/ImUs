@@ -26,7 +26,10 @@ comandantecheguevara.py links
 # Step by Step
 
 # Face Capture 
-The users take pictures of their faces. The visualized ellipse defines the correct position and centering. The user can take a picture of himself when satisfied. Automatically, after the photo is acquired by webcam-capture-v1.01.py and stored in the selcted directory the code is ready for the next person. Once the photos have been taken the *exploration space* is ready to be used.
+The users take pictures of their faces. The visualized ellipse defines the correct position and centering. 
+
+
+The user can take a picture of himself when satisfied. Automatically, after the photo is acquired by webcam-capture-v1.01.py and stored in the selcted directory the code is ready for the next person. Once the photos have been taken the *exploration space* is ready to be used.
 
 # People Tracking
 As the audence enters the *exploration space* they are tracked by the camera. They are free to move and interact with others. They'll find themself immersed in a soundscape. 
@@ -54,7 +57,7 @@ The video is saved as themorph.avi in the selected directory.
 # Visualization
 What the user will see is that their physical presence have an effect on the visualization.
 videoOSC.pde reads the video and decompose it in cells resembling single pixels. 
-Those cells are exploded by the code in the 3 dimensions. 
+Those cells are exploded by the Processing code in the 3 dimensions. 
 
 ![](resources/visualization.png)
 
