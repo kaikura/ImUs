@@ -93,9 +93,7 @@ The sound is generated and processed by MaxMSP. At the beginning, a first layer 
 A second sample, produced with Diva by u-he, is also controlled in the patch. This time is fade-controlled in order to complete the sounscape, in poliphony with the first sample.
 Of course, it is possible to upload whatever sample that will be modulated in the same way.
 
-
-![](resources/hybrid.png) 
-![](resources/diva.jpg)
+<img src="resources/hybrid.png" width="460" height="346"> <img src="resources/diva.jpg" width="486" height="346">
 
 
 # Face Merging
