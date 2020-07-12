@@ -85,6 +85,9 @@ Of course, it is possible to upload whatever sample that will be modulated in th
 # Face Merging
 The faces obtained initially are merged by face_morpher, in particular by morpher.py via Delaunay triangulation. The method allows to compute an average for each possible couple of faces and a global average of all faces. The python code collects the images from the output directory of *webcam-capture-v1.01.py*.
 *videoer.py* returns an .avi file with the transactions between the averages. 
+
+![](resources/togif.gif)
+
 The video is saved as themorph.avi in the selected directory.
 
 # Visualization
