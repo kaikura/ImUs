@@ -68,22 +68,22 @@ The whole third machine is used for the correct and smooth running of the MaxMSP
 
 # Step by Step
 
-# Face Capture 
+## Face Capture 
 The users take pictures of their faces. The visualized ellipse defines the correct position and centering. 
 
 ![](resources/facecapture.jpg)
 
 The user can take a picture of himself by pressing spacebar when satisfied. Automatically, after the photo is acquired by *webcam-capture-v1.01.py* and stored in the selected directory, the code is ready for the next person. Once the photos have been taken the *exploration space* is ready to be used.
 
-# People Tracking
+## People Tracking
 As the audence enters the *exploration space* they are tracked by the camera. They are free to move and interact with others. They'll find themself immersed in a soundscape. 
 The *second camera* films over the *exploration space*. *people_counter.py* utilizes a pre-trained neural network to recognize the object "humans filmed by above" in the images taken by the camera. It assigns IDs to new people entering the view of the camera and tracks them between frames. Every ID is positioned on the computed centroid of the recognized object. 
 The istallation is meant to be experienced by three people, but with appropriate customization this number can be changed.
 
-# The Network
+## The Network
 *people_counter.py* computes the area of the figure individuated by people IDs. Since some of the programs are computationally expensive for a single laptop CPU's, three laptops are used. One for retriving the pictures, compute the face merging and run the Processing visualization. Another one for executing the tracking of the users. The third one for executing the MaxMSP application. Distance values are sent via OSC messages through a LAN working on a hotspot or any other router. *people_counter.py* works as a server for MaxMSP sound processing and for Processing video processing clients. The python file sends messages on machine IPs to customizable machine listening ports.
 
-# Environmental Sound Modulation
+## Environmental Sound Modulation
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. The sound is generated and processed by MaxMSP.
 
 ![](resources/max_pat.jpg) 
@@ -95,8 +95,7 @@ Of course, it is possible to upload whatever sample that will be modulated in th
 
 <img src="resources/hybrid.png" width="460" height="346"> <img src="resources/diva.jpg" width="486" height="346">
 
-
-# Face Merging
+## Face Merging
 The faces obtained initially are merged by face_morpher, in particular by morpher.py via Delaunay triangulation. The method allows to compute an average for each possible couple of faces and a global average of all faces. The python code collects the images from the output directory of *webcam-capture-v1.01.py*.
 *videoer.py* returns an .avi file with the transactions between the averages. 
 
@@ -104,7 +103,7 @@ The faces obtained initially are merged by face_morpher, in particular by morphe
 
 The video is saved as themorph.avi in the selected directory.
 
-# Visualization
+## Visualization
 What the user will see is that their physical presence have an effect on the visualization.
 *videoOSC.pde* reads the video and decompose it in cells resembling single pixels. 
 Those cells are exploded by the Processing code in the 3 dimensions. 
