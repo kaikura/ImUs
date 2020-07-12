@@ -19,10 +19,36 @@ See it here: (for presentation purpouses the visualization is on a computer scre
 - *Second Camera* - Track users in the exploration space
 - *Loudspeakers* - To listen to the exploration results
 - *Projecting Screen* - To see the exploration results
+
 The computational cost of the scripts that are runned requires the use of more than a machine. We use three machines to balance the computational intesiveness of the application.
 
 # Scripts
-The application starts with the execution of *comandantecheguevara.py* on the first machine. The python script calls *webcam-capture-v1.01.py*. The latter will permit the users to take photos of themselves.. The program is looped for a number of times equal to the number of users. At each iteration in the cycle the user is asked to take a picture of himself via the *first camera* on the first machine. When the program has collected a picture for each user it ends and returns the control to *comandantecheguevara.py*. The script now calls *purpose.py* that customizes the library *morpher.py* to merge the images. *locator.py* locates face points, using the libraries cv2 and dlib, and returns the array of points to compute the triangulation. The *aligner.py* script align faces by resizing, centering and cropping to given size. *warper.py* warps an image over another, receiving as inputs two images and their face points. The script triangulates the points and affine transforms each triangle with biliniear interpolation. At this point *morpher.py* execute the morphing of the two or more images given as inputs, returning the list of transitions, as frames, to morph an image into the other. *averager.py* returns the static average image between the inputs given. *blender.py* ends the process by blending the images in one. *videoer.py* is the scripts that receive as inputs *morpher.py* frames and returns the .avi video file of the transitions in a customized directory. At this point the control switches back to *comandantecheguevara.py* that finally calls the Processing script *videoOSC.pde* which is working on top of the generated video to generate the final visualization for the audience. When the .pde is terminated the flow returns for the last time to *comandantecheguevara.py* to terminate the whole process. On the second machine people counter is runned, using the *second camera* as image acquisition device. People counter individua tramite una rete neurlae già trainata l'ggetto se è un trackableonject esseri umani dallalto e gli asocia un Id. L'ID è messo wul centroide calcolato dell' oggetto trovato. L'ID rimane trackata grazie al centroid tracker. Il prgramma calcola larea della figura decisa dalle ID e la manda tramite OSC alla patch in MaxMSP e al file file processing. 
+
+### About the first machine
+The application starts with the execution of *comandantecheguevara.py* on the first machine. The python script calls *webcam-capture-v1.01.py*. The latter will permit the users to take photos of themselves.. The program is looped for a number of times equal to the number of users. At each iteration in the cycle the user is asked to take a picture of himself via the *first camera* on the first machine. When the program has collected a picture for each user it ends and returns the control to *comandantecheguevara.py*. The script now calls *purpose.py* that customizes the library *morpher.py* to merge the images. *locator.py* locates face points, using the libraries cv2 and dlib, and returns the array of points to compute the triangulation. The *aligner.py* script align faces by resizing, centering and cropping to given size. *warper.py* warps an image over another, receiving as inputs two images and their face points. The script triangulates the points and affine transforms each triangle with biliniear interpolation. At this point *morpher.py* execute the morphing of the two or more images given as inputs, returning the list of transitions, as frames, to morph an image into the other. *averager.py* returns the static average image between the inputs given. *blender.py* ends the process by blending the images in one. *videoer.py* is the scripts that receive as inputs *morpher.py* frames and returns the .avi video file of the transitions in a customized directory. At this point the control switches back to *comandantecheguevara.py* that finally calls the Processing script *videoOSC.pde* which is working on top of the generated video to generate the final visualization for the audience. When the .pde is terminated the flow returns for the last time to *comandantecheguevara.py* to terminate the whole process.
+
+
+### About the second machine, the master
+On the second machine *people_counter.py* is runned, using the *second camera* as frame acquisition device. *people_counter.py:*
+
+- gets the frame
+    - every *n=15* frame:
+        - convert the frame to a blob and pass the blob through the pretrained network and obtain the object detections. The selected class of object to detect is human The network is trained with images of humans viewd from above.
+        - loop over detections and filter out weak and useless detections. Those defintions are customizable.
+        - construct a dlib rectangle object and start the dlib correlation tracker
+        - add the tracker to our list of trackers
+    - else:
+        - update the tracker and grab the updated position
+        - use the *centroid_tracker.py* to associate the (1) old object centroids with (2) the newly computed object centroids
+    - loop over the tracked objects:
+        - check to see if a trackable object exists for the current object ID
+        - create if there is no existing trackable object, otherwise utilize it to count
+        - compute the area value of the figure individuated by the current object IDs using their current coordinates
+        - send the area value to the sound processor (MaxMSP patch) and to the visualization (Processing script)
+    - draw IDs on video
+
+### About the third machine
+The whole third machine is used for the correct and smooth running of the MaxMSP sound processing patch.
 
 # Step by Step
 
@@ -39,7 +65,7 @@ The *second camera* films over the *exploration space*. *people_counter.py* util
 The istallation is meant to be experienced by three people, but with appropriate customization this number can be changed.
 
 # The Network
-*people_counter.py* computes the area of the figure individuated by people IDs. Since, some of the programs are computationally exprensive for a single laptop CPU's, three laptops are used. One for retriving the pictures and compute the face merging, another one for executing the tracking of the users and the third one for executing the max application. Distance values are sent via OSC messages through a LAN working on a hotspot or any other router.  The python file works as a server for MaxMSP sound processing and for Processing video processing clients.
+*people_counter.py* computes the area of the figure individuated by people IDs. Since some of the programs are computationally expensive for a single laptop CPU's, three laptops are used. One for retriving the pictures, compute the face merging and run the Processing visualization. Another one for executing the tracking of the users. The third one for executing the MaxMSP application. Distance values are sent via OSC messages through a LAN working on a hotspot or any other router. *people_counter.py* works as a server for MaxMSP sound processing and for Processing video processing clients. The python file sends messages on machine IPs to customizable listening ports on the machines.
 
 # Environmental Sound Modulation
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. The sound is generated and processed by MaxMSP.
@@ -47,9 +73,9 @@ What the user will hear is that their physical presence have an effect on the so
 ![](resources/max_pat.jpg)
 
 At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. 
-The sound is generated and processed by MaxMSP. At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages. The OSC value is sent to Max from a python program that take care of detecting the events on the playground. 
-A second sample, produced with Diva u-he, is also controlled in the patch. This time is fade-controlled in order to complete the chord, in poliphony with the first sample.
-Of couse, it is possible to upload whatever sample that are gonna be modulated in the same way.
+The sound is generated and processed by MaxMSP. At the beginning, a first layer of two synth, produced with Hybrid 3 by AIR Music Technology, is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages. The OSC value is sent to Max from a python program that take care of detecting the events on the playground. 
+A second sample, produced with Diva by u-he, is also controlled in the patch. This time is fade-controlled in order to complete the sounscape, in poliphony with the first sample.
+Of course, it is possible to upload whatever sample that will be modulated in the same way.
 
 
 ![](resources/hybrid.png)
