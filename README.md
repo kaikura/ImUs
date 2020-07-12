@@ -86,7 +86,7 @@ The istallation is meant to be experienced by three people, but with appropriate
 # Environmental Sound Modulation
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. The sound is generated and processed by MaxMSP.
 
-![](resources/max_pat.jpg)
+![](resources/max_pat.jpg) 
 
 At the beginning, a first layer of two synth created with Hybrid 3 by AIR Music Technology is played in loop. It is filtered with a low pass which cutting frequency is What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. 
 The sound is generated and processed by MaxMSP. At the beginning, a first layer of two synth, produced with Hybrid 3 by AIR Music Technology, is played in loop. It is filtered with a low pass which cutting frequency is controlled via OSC messages. The OSC value is sent to Max from a python program that take care of detecting the events on the playground. 
@@ -94,7 +94,8 @@ A second sample, produced with Diva by u-he, is also controlled in the patch. Th
 Of course, it is possible to upload whatever sample that will be modulated in the same way.
 
 
-![](resources/hybrid.png)
+![](resources/hybrid.png) 
+![](resources/diva.jpg)
 
 
 # Face Merging
