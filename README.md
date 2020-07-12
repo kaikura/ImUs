@@ -93,7 +93,7 @@ The sound is generated and processed by MaxMSP. At the beginning, a first layer 
 A second sample, produced with Diva by u-he, is also controlled in the patch. This time is fade-controlled in order to complete the sounscape, in poliphony with the first sample.
 Of course, it is possible to upload whatever sample that will be modulated in the same way.
 
-<img src="resources/hybrid.png" width="306" height="190"> <img src="resources/diva.jpg" width="306" height="190">
+<img src="resources/hybrid.png" width="320" height="230"> <img src="resources/diva.jpg" width="320" height="230">
 
 ## Face Merging
 The faces obtained initially are merged by face_morpher, in particular by morpher.py via Delaunay triangulation. The method allows to compute an average for each possible couple of faces and a global average of all faces. The python code collects the images from the output directory of *webcam-capture-v1.01.py*.
