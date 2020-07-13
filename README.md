@@ -122,3 +122,7 @@ Those cells are exploded by the Processing code in the 3 dimensions.
 
 The z coordinate is controlled via OSC messages by the area of the figure individuated by the IDs of *people_counter.py*. The bigger it is (the bigger the distance between people is), the bigger z will be. In this way, as the closeness between people increases the planar visualization increases, and so the clearness of the video visualization.
 The video is put in loop and then played at random points every 22 frames for aestetics purpouses.
+
+## Thanksgiving to
+pyimagesearch @ https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/
+alyssaq @ https://github.com/alyssaq/face_morpher
