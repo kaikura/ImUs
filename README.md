@@ -22,7 +22,14 @@ See it here: (for presentation purpouses the visualization is on a computer scre
 
 The computational cost of the scripts that are runned requires the use of more than a machine. We use three machines to balance the computational intesiveness of the application.
 
-# Neural Networks Models
+# Detection and tracking
+
+The structure of the object detector/tracker is the following: there is a real object detector, build using a MobileNet Single Shot detector, which is a combination of: 
+1) an SSD which discretizes the output space of bounding boxes into a set of default boxes over different aspect ratios and scales per feature map location. At prediction time, the network generates scores for the presence of each object category in each default box and produces adjustments to the box to better match the object shape. 
+2) A mobileNet, which uses depthwise separable convolution: The general idea behind depthwise separable convolution is to split convolution into two stages, a 3×3 depthwise convolution followed by a 1×1 pointwise convolution. This allows us to actually reduce the number of parameters in our network. 
+
+The object detector computes the bounding boxes of the objects; then, on top of it  works an object tracker. The object detector detects the objects every 30 frames (but it is possible to customise the parameter): in the remaining frames the object tracker is used: the centroid tracking relies on the Euclidean distance between existing object centroids (i.e., objects the centroid tracker has already seen before) and new object centroids between subsequent frames in a video; the bounding boxes positions are changed with the use of a correlation filter, which is able to recognise the movement of an existing object and update the positions of the box and its centroid in the 29 frames between the two subsequent executions of the object detector; then the object detector is again executed and update the position of the objects (independently from the last frame); an object which was near to another object in the subsequent frame will simply mantain the same ID, no matter if it was updated by the object detector (every 30 frames) or by the object tracker (in the remaining frames).
+
 
 # Scripts
 
