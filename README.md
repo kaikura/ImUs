@@ -78,6 +78,9 @@ The user can take a picture of himself by pressing spacebar when satisfied. Auto
 ## People Tracking
 As the audence enters the *exploration space* they are tracked by the camera. They are free to move and interact with others. They'll find themself immersed in a soundscape. 
 The *second camera* films over the *exploration space*. *people_counter.py* utilizes a pre-trained neural network to recognize the object "humans filmed by above" in the images taken by the camera. It assigns IDs to new people entering the view of the camera and tracks them between frames. Every ID is positioned on the computed centroid of the recognized object. 
+
+![](resources/gif.gif)
+
 The istallation is meant to be experienced by three people, but with appropriate customization this number can be changed.
 
 ## The Network
