@@ -22,6 +22,8 @@ See it here: (for presentation purpouses the visualization is on a computer scre
 
 The computational cost of the scripts that are runned requires the use of more than a machine. We use three machines to balance the computational intesiveness of the application.
 
+# Neural Networks Models
+
 # Scripts
 
 ### About the first machine
