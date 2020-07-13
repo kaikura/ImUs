@@ -125,4 +125,4 @@ The video is put in loop and then played at random points every 22 frames for ae
 
 ## Thanksgiving to
 pyimagesearch @ https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/ 
-alyssaq @ https://github.com/alyssaq/face_morpher
+\nalyssaq @ https://github.com/alyssaq/face_morpher
