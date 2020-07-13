@@ -124,5 +124,5 @@ The z coordinate is controlled via OSC messages by the area of the figure indivi
 The video is put in loop and then played at random points every 22 frames for aestetics purpouses.
 
 ## Thanksgiving to
-pyimagesearch @ https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/
+pyimagesearch @ https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/ 
 alyssaq @ https://github.com/alyssaq/face_morpher
