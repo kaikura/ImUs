@@ -11,6 +11,8 @@
 
 We developed the experience being inspired by those concepts, trying to convey our message.
 
+Realized in the course of Creative Programming and Computing, held by Prof. Massimiliano Zanoni
+
 
 # Tools
 - *Exploration Space* - The portion of space dedicated to the users
@@ -21,7 +23,6 @@ We developed the experience being inspired by those concepts, trying to convey o
 
 The computational cost of the scripts that are runned requires the use of more than a machine. We use three machines to balance the computational intesiveness of the application.
 
-Realized in the course of Creative Programming and Computing, held by Prof. Massimiliano Zanoni
 
 
 # Scripts
