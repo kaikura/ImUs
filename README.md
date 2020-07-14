@@ -35,6 +35,7 @@ The computational cost of the scripts that are runned requires the use of more t
         - At each iteration in the cycle the user is asked to take a picture of himself via the *first camera* on the first machine.
         - When the program has collected a picture for each user it ends and returns the control to *comandante.py*.  
     - *comandante.py* now calls *purpose.py* that customizes the library *alissaq phace morpher* to merge the images. In particular, it takes as input the 3 images to merge ABC, produce the averages of the images AB, AC, BC and ABC calling the function averager on separate folders, and then calls the morpher to produce the transition video between the averaged images. 
+    The main functions of the library are:
         - *locator.py* locates face points, using the libraries cv2 and dlib, and returns the array of points to compute the triangulation
         - *aligner.py* script align faces by resizing, centering and cropping to given size 
         - *warper.py* warps an image over another, receiving as inputs two images and their face points 
