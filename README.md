@@ -49,7 +49,7 @@ On the second machine *people_counter.py* (computes the area of the figure indiv
 
 - gets the frame from the *second camera*
     - every *n=30 (customizable)* frames:
-        - convert the frame to a blob and pass the blob through the pretrained network and obtain the object detections. The selected class of object to detect is human. The network is trained with images of humans viewd from above
+        - convert the frame to a blob and pass the blob through the pretrained network and obtain the object detections. The selected class of object to detect is human. The network is trained with images of humans
         - loop over detections and filter out weak and useless detections. Those defintions are customizable
         - construct a dlib rectangle object and start the dlib correlation tracker
         - add the tracker to our list of trackers
