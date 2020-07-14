@@ -25,11 +25,11 @@ The computational cost of the scripts that are runned requires the use of more t
 # Scripts
 
 ### About the first machine
-- The application starts with the execution of *comandantecheguevara.py* on the first machine. 
-    - *comandantecheguevara.py* calls *webcam-capture-v1.01.py*. The program loops for a number of times (customizable) equal to the number of users. 
+- The application starts with the execution of *comandante.py* on the first machine. 
+    - *comandante.py* calls *webcam-capture-v1.01.py*. The program loops for a number of times (customizable) equal to the number of users. 
         - At each iteration in the cycle the user is asked to take a picture of himself via the *first camera* on the first machine.
-        - When the program has collected a picture for each user it ends and returns the control to *comandantecheguevara.py*.  
-    - *comandantecheguevara.py* now calls *purpose.py* that customizes the library *morpher.py* to merge the images. 
+        - When the program has collected a picture for each user it ends and returns the control to *comandante.py*.  
+    - *comandante.py* now calls *purpose.py* that customizes the library *morpher.py* to merge the images. 
         - *locator.py* locates face points, using the libraries cv2 and dlib, and returns the array of points to compute the triangulation
         - *aligner.py* script align faces by resizing, centering and cropping to given size 
         - *warper.py* warps an image over another, receiving as inputs two images and their face points 
@@ -38,13 +38,13 @@ The computational cost of the scripts that are runned requires the use of more t
         - *averager.py* returns the static average image between the inputs given
         - *blender.py* ends the process by blending the images in one 
         - *videoer.py* is the scripts that receive as inputs *morpher.py* frames and returns the .avi video file of the transitions in a customized directory. 
-    - the control switches back to *comandantecheguevara.py* 
+    - the control switches back to *comandante.py* 
         - call to *videoOSC.pde* which is working on top of the generated video to generate the final visualization for the audience 
-    - When the .pde is terminated the flow returns for the last time to *comandantecheguevara.py* to terminate the whole process.
+    - When the .pde is terminated the flow returns for the last time to *comandante.py* to terminate the whole process.
 
 
 ### About the second machine, the master
-On the second machine *people_counter.py* is runned, using the *second camera* as frame acquisition device. 
+On the second machine *people_counter.py* (computes the area of the figure individuated by people IDs.) is runned, using the *second camera* as frame acquisition device. 
 *people_counter.py:*
 
 - gets the frame from the *second camera*
@@ -79,7 +79,7 @@ The user can take a picture of himself by pressing spacebar when satisfied. Auto
 As the audence enters the *exploration space* they are tracked by the camera. They are free to move and interact with others. They'll find themself immersed in a soundscape. 
 The *second camera* films over the *exploration space* to track the people inside the space. 
 
-The structure of the object detector/tracker is the following: there is a real object detector, build using a MobileNet Single Shot Detector, which is a combination of: 
+The structure of the object detector/tracker is the following: there is a real object detector, built using a MobileNet Single Shot Detector, which is a combination of: 
 1) an SSD which discretizes the output space of bounding boxes into a set of default boxes over different aspect ratios and scales per feature map location. At prediction time, the network generates scores for the presence of each object category in each default box and produces adjustments to the box to better match the object shape. 
 2) A mobileNet, which uses depthwise separable convolution: The general idea behind depthwise separable convolution is to split convolution into two stages, a 3×3 depthwise convolution followed by a 1×1 pointwise convolution. This allows us to actually reduce the number of parameters in our network. 
 
@@ -90,7 +90,7 @@ The object detector computes the bounding boxes of the objects; then, on top of 
 The istallation is meant to be experienced by three people, but with appropriate customization this number can be changed.
 
 ## The Network
-*people_counter.py* computes the area of the figure individuated by people IDs. Since some of the programs are computationally expensive for a single laptop CPU's, three laptops are used. One for retriving the pictures, compute the face merging and run the Processing visualization. Another one for executing the tracking of the users. The third one for executing the MaxMSP application. Distance values are sent via OSC messages through a LAN working on a hotspot or any other router. *people_counter.py* works as a server for MaxMSP sound processing and for Processing video processing clients. The python file sends messages on machine IPs to customizable machine listening ports.
+Since some of the programs are computationally expensive for a single laptop CPU's, three laptops are used. One for retriving the pictures, compute the face merging and run the Processing visualization. Another one for executing the tracking of the users. The third one for executing the MaxMSP application. Distance values are sent via OSC messages through a LAN working on a hotspot or any other router. *people_counter.py* works as a server for MaxMSP sound processing and for Processing video processing clients. The python file sends messages on machine IPs to customizable machine listening ports.
 
 ## Environmental Sound Modulation
 What the user will hear is that their physical presence have an effect on the sound landscape they're immersed in. The sound is generated and processed by MaxMSP.
