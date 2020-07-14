@@ -4,14 +4,13 @@
 
 - **Materiality:** the audience is engaged through the physical world
 - **Embodiment:** mind and body have the same weight, they're not treated separately
-- **The Cyborg:** the application have a certain degree of autonomy
+- **The Cyborg:** the application has a certain degree of autonomy
 - **Hybridity:** hybridity of disciplines involved is self evident; real world and virtual world merge through sound modulation and through visualization
-- **Narrative:** the experience have a starting point and a climax that can be reached by the audience
+- **Narrative:** the experience has a starting point and a climax that can be reached by the audience
 - **Interactivity:** the piece works through people
 
 We developed the experience being inspired by those concepts, trying to convey our message.
 
-See it here: (for presentation purpouses the visualization is on a computer screen)
 
 # Tools
 - *Exploration Space* - The portion of space dedicated to the users
@@ -39,7 +38,7 @@ The computational cost of the scripts that are runned requires the use of more t
         - *averager.py* returns the static average image between the inputs given
         - *blender.py* ends the process by blending the images in one 
         - *videoer.py* is the scripts that receive as inputs *morpher.py* frames and returns the .avi video file of the transitions in a customized directory. 
-        - the control switches back to *comandantecheguevara.py* 
+    - the control switches back to *comandantecheguevara.py* 
         - call to *videoOSC.pde* which is working on top of the generated video to generate the final visualization for the audience 
     - When the .pde is terminated the flow returns for the last time to *comandantecheguevara.py* to terminate the whole process.
 
@@ -49,9 +48,9 @@ On the second machine *people_counter.py* is runned, using the *second camera* a
 *people_counter.py:*
 
 - gets the frame from the *second camera*
-    - every *n=15* frame:
-        - convert the frame to a blob and pass the blob through the pretrained network and obtain the object detections. The selected class of object to detect is human The network is trained with images of humans viewd from above.
-        - loop over detections and filter out weak and useless detections. Those defintions are customizable.
+    - every *n=30 (customizable)* frames:
+        - convert the frame to a blob and pass the blob through the pretrained network and obtain the object detections. The selected class of object to detect is human. The network is trained with images of humans viewd from above
+        - loop over detections and filter out weak and useless detections. Those defintions are customizable
         - construct a dlib rectangle object and start the dlib correlation tracker
         - add the tracker to our list of trackers
     - else:
@@ -80,7 +79,7 @@ The user can take a picture of himself by pressing spacebar when satisfied. Auto
 As the audence enters the *exploration space* they are tracked by the camera. They are free to move and interact with others. They'll find themself immersed in a soundscape. 
 The *second camera* films over the *exploration space* to track the people inside the space. 
 
-The structure of the object detector/tracker is the following: there is a real object detector, build using a MobileNet Single Shot detector, which is a combination of: 
+The structure of the object detector/tracker is the following: there is a real object detector, build using a MobileNet Single Shot Detector, which is a combination of: 
 1) an SSD which discretizes the output space of bounding boxes into a set of default boxes over different aspect ratios and scales per feature map location. At prediction time, the network generates scores for the presence of each object category in each default box and produces adjustments to the box to better match the object shape. 
 2) A mobileNet, which uses depthwise separable convolution: The general idea behind depthwise separable convolution is to split convolution into two stages, a 3×3 depthwise convolution followed by a 1×1 pointwise convolution. This allows us to actually reduce the number of parameters in our network. 
 
