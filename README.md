@@ -11,7 +11,7 @@
 
 We developed the experience being inspired by those concepts, trying to convey our message.
 
-Realized in the course of Creative Programming and Computing, held by Prof. Massimiliano 
+Realized in the course of Creative Programming and Computing, held by Prof. Massimiliano Zanoni
 
 See video Demo here https://vimeo.com/437918127
 
