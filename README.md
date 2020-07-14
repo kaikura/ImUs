@@ -34,7 +34,7 @@ The computational cost of the scripts that are runned requires the use of more t
     - *comandante.py* calls *webcam-capture-v1.01.py*. The program loops for a number of times (customizable) equal to the number of users. 
         - At each iteration in the cycle the user is asked to take a picture of himself via the *first camera* on the first machine.
         - When the program has collected a picture for each user it ends and returns the control to *comandante.py*.  
-    - *comandante.py* now calls *purpose.py* that customizes the library *morpher.py* to merge the images. In particular, it takes as input the 3 images to merge ABC, produce the averages of the images AB, AC, BC and ABC calling the function averager on separate folders, and then calls the morpher to produce the transition video between the averaged images. 
+    - *comandante.py* now calls *purpose.py* that customizes the library *alissaq phace morpher* to merge the images. In particular, it takes as input the 3 images to merge ABC, produce the averages of the images AB, AC, BC and ABC calling the function averager on separate folders, and then calls the morpher to produce the transition video between the averaged images. 
         - *locator.py* locates face points, using the libraries cv2 and dlib, and returns the array of points to compute the triangulation
         - *aligner.py* script align faces by resizing, centering and cropping to given size 
         - *warper.py* warps an image over another, receiving as inputs two images and their face points 
@@ -112,7 +112,7 @@ Of course, it is possible to upload whatever sample that will be modulated in th
 
 ## Face Merging
 The faces obtained initially are merged by face_morpher, in particular by morpher.py via Delaunay triangulation. The method allows to compute an average for each possible couple of faces and a global average of all faces. The python code collects the images from the output directory of *webcam-capture-v1.01.py*.
-*videoer.py* returns an .avi file with the transactions between the averages. 
+*morpher.py* returns an .avi file with the transactions between the averages. 
 
 ![](resources/togif.gif)
 
